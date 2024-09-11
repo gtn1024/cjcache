@@ -1,0 +1,13 @@
+[dependencies]
+
+[package]
+  cjc-version = "0.54.3"
+  compile-option = ""
+  description = "nothing here"
+  link-option = ""
+  name = "lru4cj"
+  output-type = "dynamic"
+  src-dir = ""
+  target-dir = ""
+  version = "1.0.0"
+  package-configuration = {}
