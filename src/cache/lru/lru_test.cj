@@ -4,13 +4,18 @@ import std.unittest.*
 import std.unittest.testmacro.*
 
 var evictCounter = 0
+
 @Test
 func testLRU() {
     evictCounter = 0
-    let l = newLRU<Int64, Int64>(128, { k, v =>
-        @Expect(k, v)
-        evictCounter++
-    })
+    let l = newLRU<Int64, Int64>(
+        128,
+        {
+            k, v =>
+            @Expect(k, v)
+            evictCounter++
+        }
+    )
 
     for (i in 0..256) {
         l.put(i, i)
@@ -23,7 +28,7 @@ func testLRU() {
     for (i in 0..keys.size) {
         @Expect(keys[i], 255 - i)
 
-        let v = match(l.get(keys[i])) {
+        let v = match (l.get(keys[i])) {
             case Some(v) => v
             case None => -1
         }

@@ -58,7 +58,7 @@ public class LRU<K, V> <: Cache<K, V> where K <: Hashable & Equatable<K> {
     }
 
     internal func removeOldest(): Unit {
-        let node = match(this.evictList.lastNode()) {
+        let node = match (this.evictList.lastNode()) {
             case Some(n) => n
             case None => return
         }
