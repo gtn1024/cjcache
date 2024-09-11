@@ -1,7 +1,6 @@
-package lru4cj.lru.simplelru
+package cjcache.cache.lru
 
-import std.collection.{LinkedList, HashMap, LinkedListNode}
-import std.collection.ArrayList
+import std.collection.{LinkedList, HashMap, LinkedListNode, ArrayList}
 
 type EvictCallback<K, V> = (K, V) -> Unit
 

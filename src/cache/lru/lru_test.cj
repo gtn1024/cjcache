@@ -1,4 +1,4 @@
-package lru4cj.lru.simplelru
+package cjcache.cache.lru
 
 import std.unittest.*
 import std.unittest.testmacro.*

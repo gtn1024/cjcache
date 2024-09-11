@@ -5,9 +5,9 @@
   compile-option = ""
   description = "nothing here"
   link-option = ""
-  name = "lru4cj"
+  name = "cjcache"
   output-type = "dynamic"
   src-dir = ""
   target-dir = ""
-  version = "1.0.0"
+  version = "0.0.1"
   package-configuration = {}
