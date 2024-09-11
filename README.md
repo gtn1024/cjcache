@@ -3,7 +3,7 @@
   <p>Cache library supports LRU for Cangjie</p>
 </div>
 <p align="center">
-  <img alt="" src="https://img.shields.io/badge/release-v0.0.2-brightgreen" style="display: inline-block;" />
+  <img alt="" src="https://img.shields.io/badge/release-v0.1.0-brightgreen" style="display: inline-block;" />
   <img alt="" src="https://img.shields.io/badge/cjc-v0.55.3-brightgreen" style="display: inline-block;" />
 </p>
 
@@ -21,7 +21,7 @@ cjcache is a cache library supports LRU.
 
 ```toml
 # In the `dependencies` section of `cjpm.toml`
-cjcache = { git = "https://github.com/gtn1024/cjcache.git", tag = "v0.0.2" }
+cjcache = { git = "https://github.com/gtn1024/cjcache.git", tag = "v0.1.0" }
 ```
 
 ## 使用 / Usage
