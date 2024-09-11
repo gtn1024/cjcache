@@ -13,7 +13,7 @@ func testLRU() {
     })
 
     for (i in 0..256) {
-        l.add(i, i)
+        l.put(i, i)
     }
     @Expect(l.length(), 128)
     @Expect(l.capacity(), 128)

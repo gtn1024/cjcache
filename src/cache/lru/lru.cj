@@ -15,12 +15,12 @@ public struct Entry<K, V> {
 }
 
 public class LRU<K, V> where K <: Hashable & Equatable<K> {
-    let size: Int32
-    let evictList: LinkedList<Entry<K, V>>
-    let items: HashMap<K, LinkedListNode<Entry<K, V>>>
-    let onEvict: ?EvictCallback<K, V>
+    internal let size: Int32
+    internal let evictList: LinkedList<Entry<K, V>>
+    internal let items: HashMap<K, LinkedListNode<Entry<K, V>>>
+    internal let onEvict: ?EvictCallback<K, V>
 
-    public init(size: Int32, onEvict: ?EvictCallback<K, V>) {
+    internal init(size: Int32, onEvict: ?EvictCallback<K, V>) {
         this.size = size
         this.onEvict = onEvict
         this.evictList = LinkedList<Entry<K, V>>()
@@ -35,7 +35,7 @@ public class LRU<K, V> where K <: Hashable & Equatable<K> {
         this.evictList.clear()
     }
 
-    public func add(k: K, v: V) {
+    public func put(k: K, v: V) {
         // Check for existing item
         if (this.items.contains(k)) {
             let node = this.items[k]
@@ -56,7 +56,7 @@ public class LRU<K, V> where K <: Hashable & Equatable<K> {
         evict
     }
 
-    public func removeOldest(): Unit {
+    internal func removeOldest(): Unit {
         let node = match(this.evictList.lastNode()) {
             case Some(n) => n
             case None => return
@@ -64,7 +64,7 @@ public class LRU<K, V> where K <: Hashable & Equatable<K> {
         this.removeElement(node)
     }
 
-    public func removeElement(node: LinkedListNode<Entry<K, V>>) {
+    internal func removeElement(node: LinkedListNode<Entry<K, V>>) {
         let k = node.value.k
         let v = node.value.v
         this.items.remove(k)
@@ -73,7 +73,7 @@ public class LRU<K, V> where K <: Hashable & Equatable<K> {
     }
 
     public func length() {
-        this.evictList.size
+        Int32(this.evictList.size)
     }
 
     public func capacity() {
