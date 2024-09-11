@@ -1,6 +1,8 @@
-.vscode
-.cache
+.vscode/
+.cache/
 *.macrocall
 tmpFile*
+*.gcno
+*.gcda
 
-target
+target/
