@@ -1,6 +1,7 @@
 package cjcache.cache.lru
 
 import std.collection.{LinkedList, HashMap, LinkedListNode, ArrayList}
+import cjcache.cache.Cache
 
 type EvictCallback<K, V> = (K, V) -> Unit
 
@@ -14,7 +15,7 @@ public struct Entry<K, V> {
     }
 }
 
-public class LRU<K, V> where K <: Hashable & Equatable<K> {
+public class LRU<K, V> <: Cache<K, V> where K <: Hashable & Equatable<K> {
     internal let size: Int32
     internal let evictList: LinkedList<Entry<K, V>>
     internal let items: HashMap<K, LinkedListNode<Entry<K, V>>>
