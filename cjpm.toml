@@ -3,7 +3,7 @@
 [package]
   cjc-version = "0.55.3"
   compile-option = ""
-  description = "nothing here"
+  description = "Cache library for Cangjie"
   link-option = ""
   name = "cjcache"
   output-type = "dynamic"
